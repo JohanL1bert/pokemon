@@ -1,5 +1,12 @@
 import React from 'react';
+import { HomePage } from 'app/components/HomePage';
+import { Header } from 'app/components/Header';
 
 export const Home = () => {
-  return <div className="screen-height" />;
+  return (
+    <>
+      <Header />
+      <HomePage />;
+    </>
+  );
 };
