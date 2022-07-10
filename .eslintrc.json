@@ -32,7 +32,8 @@
     "no-multiple-empty-lines": 1,
     "no-new-func": 1,
     "no-new-wrappers": 1,
-    "no-shadow": 1,
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
     "radix": 0,
     "no-case-declarations": 0,
     "spaced-comment": 1,
@@ -40,6 +41,11 @@
     "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
     "react/function-component-definition": 0,
     "import/prefer-default-export": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error"],
+
+    "no-param-reassign": ["error", { "props": true, "ignorePropertyModificationsFor": ["state"] }],
+
     "import/order": [
       1,
       {
@@ -116,7 +122,9 @@
         "html": true
       }
     ],
-    "no-use-before-define": "off"
+    "no-use-before-define": "off",
+    "default-param-last": 0,
+    "react/jsx-props-no-spreading": 0
   },
   "settings": {
     "react": {
@@ -126,7 +134,7 @@
     "import/resolver": {
       "node": {
         "extensions": [".js", ".jsx", ".ts", ".tsx"],
-        "paths": ["src"]
+        "paths": ["./src"]
       }
     }
   },
