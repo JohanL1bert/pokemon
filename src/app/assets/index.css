@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-.screen-height {
-  height: calc(100vh - theme('spacing.20'));
+@layer components {
+  .screen-height {
+    height: calc(100vh - theme('spacing.20'));
+  }
+
+  .screen-pokemonPage {
+    height: calc(100vh - 112px);
+  }
+
+  .background-stretch {
+    background-size: 100% 100%;
+  }
 }
