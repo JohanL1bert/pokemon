@@ -14,4 +14,32 @@
   .background-stretch {
     background-size: 100% 100%;
   }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  }
+
+  .arrowUp {
+    transition: all 0.1s;
+  }
+
+  .arrowUp .left-arrow-left:after {
+    transform: rotate(20deg);
+    background-color: rgb(162, 102, 211);
+  }
+
+  .arrowUp .right-arrow-left:after {
+    transform: rotate(-20deg);
+    background-color: rgb(162, 102, 211);
+  }
+
+  .arrowUp .left-arrow-right:after {
+    transform: rotate(-20deg);
+    background-color: rgb(162, 102, 211);
+  }
+  .arrowUp .right-arrow-right:after {
+    transform: rotate(20deg);
+    background-color: rgb(162, 102, 211);
+  }
 }

@@ -6,6 +6,7 @@ import { getPokemonGrowthRateWatcher } from 'app/store/growthRate/pokemonGrowthR
 import { getPokemonAbilitiesWatcher } from 'app/store/pokemonAbilities/pokemonAbilities.saga';
 import { getPokemonCharWatcher } from 'app/store/pokemonCharacteristic/pokemonChar.saga';
 import { getPokemonStatsWatcher } from 'app/store/pokemonStats/pokemonStats.saga';
+import { getPokemonInputWatcher } from '../getPokemon/getInputPokemon.saga';
 
 function* rootWatcher() {
   const sagas = [
@@ -16,6 +17,7 @@ function* rootWatcher() {
     getPokemonAbilitiesWatcher,
     getPokemonCharWatcher,
     getPokemonStatsWatcher,
+    getPokemonInputWatcher,
   ];
   const retrySagas = sagas.map((saga) => {
     return spawn(function* () {
