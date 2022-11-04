@@ -3,4 +3,5 @@ enum LOADSTATUS {
   succes = 'succes',
   fail = 'error',
 }
+
 export { LOADSTATUS };
