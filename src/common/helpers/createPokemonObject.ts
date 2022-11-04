@@ -2,8 +2,9 @@ import { IGetPokemonData, IPokemonImagePromise } from 'app/store/getPokemon/inte
 
 export const createPokemonObject = (
   requestData: IGetPokemonData,
-  images: Array<IPokemonImagePromise<string>>
+  images: Array<IPokemonImagePromise<string>>,
+  types: any
 ) => {
   const PokemonImage = images.map((key) => key);
-  return { ...requestData, PokemonImage };
+  return { ...requestData, PokemonImage, types };
 };
