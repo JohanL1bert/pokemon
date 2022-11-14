@@ -4,7 +4,7 @@ export const httpRequestSetting = {
   responsType: 'arraybuffer',
 };
 
-export const API_URL = `https://pokeapi.co/api/v2/`;
+export const API_URL = `https://pokeapi.co/api/v2`;
 
 const $api = axios.create({
   baseURL: API_URL,
