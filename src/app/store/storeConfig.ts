@@ -10,6 +10,8 @@ import {
   getPokemonCharReducer,
   getPokemonGrowthRateReducer,
   getPokemonStatsReducer,
+  getPokemonTypesReducer,
+  getPokemonCardReducer,
 } from 'app/store/reducerRename/renameReducer';
 
 const rootReducer = combineReducers({
@@ -20,6 +22,8 @@ const rootReducer = combineReducers({
   [ReducerName.GET_POKEMON_CHARACTERISTIC]: getPokemonCharReducer,
   [ReducerName.GET_POKEMON_GROWTH_RATE]: getPokemonGrowthRateReducer,
   [ReducerName.GET_POKEMON_STATS]: getPokemonStatsReducer,
+  [ReducerName.GET_POKEMON_TYPES]: getPokemonTypesReducer,
+  [ReducerName.GET_POKEMON_CARD]: getPokemonCardReducer,
 });
 
 const sagaMiddleware = createSagaMiddleware();

@@ -6,7 +6,9 @@ import { getPokemonGrowthRateWatcher } from 'app/store/growthRate/pokemonGrowthR
 import { getPokemonAbilitiesWatcher } from 'app/store/pokemonAbilities/pokemonAbilities.saga';
 import { getPokemonCharWatcher } from 'app/store/pokemonCharacteristic/pokemonChar.saga';
 import { getPokemonStatsWatcher } from 'app/store/pokemonStats/pokemonStats.saga';
-import { getPokemonInputWatcher } from '../getPokemon/getInputPokemon.saga';
+import { getPokemonInputWatcher } from 'app/store/getPokemon/getInputPokemon.saga';
+import { getPokemonTypesWatcher } from 'app/store/pokemonTypes/pokemonTypes.saga';
+import { getPokemonCardWatcher } from 'app/store/pokeCard/pokemonCard.saga';
 
 function* rootWatcher() {
   const sagas = [
@@ -18,6 +20,8 @@ function* rootWatcher() {
     getPokemonCharWatcher,
     getPokemonStatsWatcher,
     getPokemonInputWatcher,
+    getPokemonTypesWatcher,
+    getPokemonCardWatcher,
   ];
   const retrySagas = sagas.map((saga) => {
     return spawn(function* () {
