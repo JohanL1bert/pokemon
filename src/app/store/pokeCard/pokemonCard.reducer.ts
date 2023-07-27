@@ -1,9 +1,15 @@
-import { createAction, createSlice /* PayloadAction */ } from '@reduxjs/toolkit';
+import { createAction, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ReducerName } from 'common/enums/reducer-name';
-import { LOADSTATUS } from 'common/enums/enum-status';
+import { LOADSTATUS, TloadStatusValue } from 'common/enums/enum-status';
 
-const initialState = {
+interface IPokemonCardState {
+  loadStatus: TloadStatusValue;
+  error: null | string;
+}
+
+const initialState: IPokemonCardState = {
   loadStatus: LOADSTATUS.loading,
+  error: null,
 };
 
 const { reducer, actions } = createSlice({
@@ -13,14 +19,17 @@ const { reducer, actions } = createSlice({
     startGetPokemonCard: (state) => ({
       ...state,
       loadStatus: LOADSTATUS.loading,
+      error: null,
     }),
     sucessPokemonCard: (state) => ({
       ...state,
       loadStatus: LOADSTATUS.succes,
+      error: null,
     }),
-    errorPokemonCard: (state) => ({
+    errorPokemonCard: (state, action: PayloadAction<{ error: string }>) => ({
       ...state,
       loadStatus: LOADSTATUS.fail,
+      error: action.payload.error,
     }),
   },
 });
