@@ -22,6 +22,7 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier", "react-hooks", "import"],
   "rules": {
+    "camelcase": "off",
     "no-console": 1,
     "curly": 1,
     "eol-last": 1,
@@ -100,7 +101,7 @@
       }
     ],
     "jsx-a11y/anchor-is-valid": [
-      "warn",
+      "off",
       {
         "components": ["Link"],
         "specialLink": ["hrefLeft", "hrefRight"],
