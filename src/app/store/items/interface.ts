@@ -30,6 +30,29 @@ export interface IItem extends IIdAndName {
   };
 }
 
-export interface IItemAttributes extends IIdAndName {}
-export interface IItemFlingEffects {}
-export interface IItemPockets {}
+export interface IItemAttributes extends IIdAndName {
+  descriptions: Array<{ description: string } & Pick<INamesIncludesNameAndLanguage, 'language'>>;
+  items: Array<INameAndUrl>;
+  names: INamesIncludesNameAndLanguage;
+}
+
+export interface IItemCategories extends IIdAndName, Pick<IItemAttributes, 'names'> {
+  pocket: INameAndUrl;
+}
+
+type TEffectEntries = Pick<IItem, 'effect_entries'>['effect_entries'][number];
+
+type TEffectEntriesOmitShortEffect = {
+  [F in keyof Pick<IItem, 'effect_entries'>]: Array<
+    Omit<{ [K in keyof TEffectEntries]: TEffectEntries[K] }, 'short_effect'>
+  >;
+};
+
+export interface IItemFlingEffects extends IIdAndName, TEffectEntriesOmitShortEffect {
+  items: Array<INameAndUrl>;
+}
+
+export interface IItemPockets extends IIdAndName {
+  catergories: Array<INameAndUrl>;
+  names: Array<INamesIncludesNameAndLanguage>;
+}
