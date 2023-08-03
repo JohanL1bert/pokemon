@@ -1,9 +1,9 @@
 import { AxiosResponse } from 'axios';
 /* import { parseUrl } from 'common/helpers/urlParseParams'; */
 import $api from 'app/services/http.service';
-import { /* IMainSearchService */ TAxiosMethods } from 'app/services/MainSearchServices.interface';
+import { TAxiosMethods } from 'app/services/MainSearchServices.interface';
 
-export class ApiSearchServices {
+export abstract class ApiSearchServices {
   /*   static async getPokemonSpecies() {
     const url = parseUrl();
     const res = await $api.get<any>(`/${url}`);
