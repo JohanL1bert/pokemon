@@ -177,4 +177,81 @@ export abstract class ApiSearchServices {
     return $api.get<A>(`/machine/${id}`);
   }
   // Moves section
+
+  // Pokemon
+  static async getPokeAbilty<P extends string | number, A>(idOrName: P): Promise<AxiosResponse<A>> {
+    return $api.get<A>(`/ability/${idOrName}`);
+  }
+
+  static async getPokeCharacteristics<P extends number, A>(id: P): Promise<AxiosResponse<A>> {
+    return $api.get<A>(`/characteristic/${id}`);
+  }
+
+  static async getPokeEggGroups<P extends string | number, A>(
+    idOrName: P
+  ): Promise<AxiosResponse<A>> {
+    return $api.get<A>(`/egg-group/${idOrName}`);
+  }
+
+  static async getPokeGender<P extends string | number, A>(idOrName: P): Promise<AxiosResponse<A>> {
+    return $api.get<A>(`/gender/${idOrName}`);
+  }
+
+  static async getPokeGrowthRate<P extends string | number, A>(
+    idOrName: P
+  ): Promise<AxiosResponse<A>> {
+    return $api.get<A>(`/growth-rate/${idOrName}`);
+  }
+
+  static async getPokeNatures<P extends string | number, A>(
+    idOrName: P
+  ): Promise<AxiosResponse<A>> {
+    return $api.get<A>(`/nature/${idOrName}`);
+  }
+
+  static async getPokeathlonStats<P extends string | number, A>(
+    idOrName: P
+  ): Promise<AxiosResponse<A>> {
+    return $api.get<A>(`/pokeathlon-stat/${idOrName}`);
+  }
+
+  static async getPokemon<P extends string | number, A>(idOrName: P): Promise<AxiosResponse<A>> {
+    return $api.get<A>(`/pokemon/${idOrName}`);
+  }
+
+  static async getPokeLocationAreas<P extends string | number, A>(
+    idOrName: P
+  ): Promise<AxiosResponse<A>> {
+    return $api.get<A>(`/pokemon/${idOrName}/encounters`);
+  }
+
+  static async getPokeColors<P extends string | number, A>(idOrName: P): Promise<AxiosResponse<A>> {
+    return $api.get<A>(`/pokemon-color/${idOrName}`);
+  }
+
+  static async getPokeForms<P extends string | number, A>(idOrName: P): Promise<AxiosResponse<A>> {
+    return $api.get<A>(`/pokemon-form/${idOrName}`);
+  }
+
+  static async getPokeHabitats<P extends string | number, A>(
+    idOrName: P
+  ): Promise<AxiosResponse<A>> {
+    return $api.get<A>(`/pokemon-habitat/${idOrName}`);
+  }
+
+  static async getPokeShapes<P extends string | number, A>(idOrName: P): Promise<AxiosResponse<A>> {
+    return $api.get<A>(`/pokemon-shape/${idOrName}`);
+  }
+
+  static async getPokeSpecies<P extends number, A>(idOrName: P): Promise<AxiosResponse<A>> {
+    return $api.get<A>(`/pokemon-species/${idOrName}`);
+  }
+
+  static async getPokeStats<P extends string | number, A>(idOrName: P): Promise<AxiosResponse<A>> {
+    return $api.get<A>(`/stat/${idOrName}/`);
+  }
+
+  static async getPokeTypes<P extends string | number, A>(idOrName: P): Promise<AxiosResponse<A>> {
+    return $api.get<A>(`/type/${idOrName}`);
+  }
 }
